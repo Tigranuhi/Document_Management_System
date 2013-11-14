@@ -14,10 +14,16 @@ public:
 	~Entity();
 
 	//setters
-	void set_id(int id);
+    void set_id(int id)
+    {
+        m_id = id;
+    }
 
 	//getters
-	int get_id() const;
+    int get_id() const
+    {
+        return m_id;
+    }
 };
 
 #endif //DocumentManagementSystem_Entity_H

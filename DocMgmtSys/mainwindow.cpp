@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <Query.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
-    QMessageBox msgbox;
-    msgbox.setText(date.toString());
-    msgbox.exec();
+    Query qr;
+    qr.add_value(10);
 }

@@ -2,6 +2,7 @@
 #define DOCUMENTMANAGEMENTSYSTEM_DB_MANAGER_H
 
 #include "Query.h"
+#include <sqlite3>
 
 class db_manager
 {
@@ -10,20 +11,32 @@ private:
     db_manager(const db_manager& obj);
     db_manager& operator=(const db_manager& obj);
 
-    Query qr;
+    Query m_qr;
 
 public:
     //singleton block
     static db_manager* s_instance = nullptr;
-    static db_manager* get_instance();
-    static void remove_instance();
+    static db_manager* get_instance()
+    {
+        s_instance = new db_manager;
+    }
+    static void remove_instance()
+    {
+        delete s_instance;
+        s_instance = nullptr;
+    }
 
     //setter
-    void set_query(const Query& qr);
-    //getter
-    Query get_query() const;
+    void set_query(const Query& qr)
+	{
+		m_qr = qr;
+	}
+
     //others
-    void execute(const Query& qr);
+    void execute()
+	{
+
+    }
 };
 
 #endif // DOCUMENTMANAGEMENTSYSTEM_DB_MANAGER_H

@@ -10,6 +10,7 @@ private:
 	string m_value;
 	
 public:
+    Condition();
 	Condition(const string& column,const string& my_operator,const string& value);
 	Condition(const string& column,const string& my_operator,int value);
 	~Condition();
