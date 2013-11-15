@@ -36,15 +36,16 @@ public:
     static db_manager* s_instance = nullptr;
     static db_manager* get_instance()
     {
+    	s_instance = new db_manager;
     	if(get_permission())
     	{
-        	s_instance = new db_manager;
+        	return nullptr;
     	}
     	else
     	{
-    		s_instance = nullptr;
+    		return s_instance;
     	}
-    	return s_instance;
+    	
     }
     static void remove_instance()
     {
