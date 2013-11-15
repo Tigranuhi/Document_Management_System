@@ -78,7 +78,12 @@ public:
     }
 
 	//getters
-	string get_result()
+	std::string get_type() const
+	{
+		return m_type;
+	}
+	
+	std::string get_result()
 	{
 		string result = "";
 		if (m_type == "INSERT")
